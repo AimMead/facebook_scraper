@@ -53,7 +53,7 @@ class facebookUserGrabber():
 		with open(self.someFile) as f:
 			lines = f.read().split("\n")
 		for line in lines:
-			myReq = "https://graph.facebook.com/{0}?fields=email,birthday,mobile_phone&access_token={1}".format(line , self.accessToken)		
+			myReq = "https://graph.facebook.com/{0}?fields=email,birthday,mobile_phone,gender&access_token={1}".format(line , self.accessToken)		
 			try:
 				res = requests.get(myReq , headers={"User-Agent":"Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36"}).content
 			except requests.exceptions.ConnectionError as e:
