@@ -6,7 +6,7 @@ import json
 print("\t\t\t\t Coder -> Mostafa M. Mead")
 print("[1] Get User Friends Id : ")
 print("[2] Get Public Posts Likes Id : ")
-print("[3] Scrape Birthdays And Emails And Phone Numbers")
+print("[3] Scrape Birthdays And Emails And Phone Numbers And Gender")
 myInput = input("Enter What Do You Want : ")
 class facebookUserGrabber():
 	def __init__(self, accessToken  , scrapingId , someFile):
@@ -82,6 +82,13 @@ class facebookUserGrabber():
 				numberFile = open("number.txt" , 'a+')
 				numberFile.write("{0}:{1}".format(number , line) + "\n")
 				numberFile.close()
+			gender = json.loads(res).get("gender")
+			if gender == None:
+				pass
+			else:
+				genderFile = open("gender.txt" , 'a+')
+				genderFile.write("{0}:{1}".format(gender , line) + "\n")
+				genderFile.close()
 		print("Scrapped Done [+]")
 if myInput == "1":
 	myObject = facebookUserGrabber(input("Enter An Access Token : ") , input("Enter An Id : ") , None)
