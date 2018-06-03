@@ -44,7 +44,7 @@ class facebookUserGrabber():
 				print(myIds)
 				myFile.write(str(myIds) + "\n")
 				myFile.close()
-			print("I Got ids , It Saved in ids.txt")
+			print("I Got ids , It Saved in newids.txt")
 			time.sleep(150)
 		except Exception as e:
 			print(e)
