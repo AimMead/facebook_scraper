@@ -30,7 +30,7 @@ class facebookUserGrabber():
 		print("I Got ids , It Saved in ids.txt")
 		time.sleep(150)
 	def getIdFromPost(self):
-		myRequest = "https://graph.facebook.com/{0}/likes?&access_token={1}".format(self.scrapingId , self.accessToken)
+		myRequest = "https://graph.facebook.com/{0}/likes?&limit=2500000&access_token={1}".format(self.scrapingId , self.accessToken)
 		try:
 			response = requests.get(myRequest , headers={"User-Agent":"Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36"}).content
 		except requests.exceptions.ConnectionError as e:
